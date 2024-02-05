@@ -17,7 +17,6 @@ import com.zebrunner.carina.utils.config.Configuration;
 public class PostPostMethod extends AbstractApiMethodV2 {
 
     public PostPostMethod() {
-        super("api/posts/_post/rq.json", "api/posts/_post/rs.json", "api/posts/posts.properties");
         replaceUrlPlaceholder("api_url", Configuration.getRequired("api_url"));
     }
 }

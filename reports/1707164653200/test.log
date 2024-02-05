@@ -1,0 +1,30 @@
+[2024-02-05 08:24:13] [1] [INFO] 
+============= Basic configuration =============
+env=DEMO
+=========== Encryptor configuration ===========
+crypto_key_value=*****
+=========== WebDriver configuration ===========
+url=https://www.gsmarena.com
+auto_screenshot=true
+localization_encoding=UTF-8
+language=en_US
+-------------- Driver capabilities ------------
+===============================================
+
+[2024-02-05 08:24:13] [1] [WARN] Reporting disabled: using no op test run registrar
+[2024-02-05 08:24:17] [1] [INFO] [TestNG] Running:
+  C:\Users\HP\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
+
+[2024-02-05 08:24:17] [1] [INFO] Set thread-count=1
+[2024-02-05 08:24:17] [1] [INFO] Set data-provider-thread-count=1
+[2024-02-05 08:24:17] [1] [INFO] CARINA_CORE_VERSION: 1.1.3
+[2024-02-05 08:24:22] [1] [INFO] INFO: '**************** Test execution summary ****************'.
+[2024-02-05 08:24:22] [1] [INFO] RESULT #1: TEST [carina-demo - testCreatePost] PASS [log=file://C:\Users\HP\IdeaProjects\carina-demo\.\reports\1707164653200/6ae27b3c-0e6f-4aaf-a109-76bcdcee2cd3/test.log]
+[2024-02-05 08:24:22] [1] [INFO] RESULT #2: TEST [carina-demo - testCreateUser] PASS [log=file://C:\Users\HP\IdeaProjects\carina-demo\.\reports\1707164653200/cb08eb50-bbdc-466c-b12e-5be6a5791d80/test.log]
+[2024-02-05 08:24:22] [1] [INFO] RESULT #3: TEST [carina-demo - testCreateUserMissingSomeFields] PASS [log=file://C:\Users\HP\IdeaProjects\carina-demo\.\reports\1707164653200/ac24a411-bfcf-451a-a0bd-fad14a047683/test.log]
+[2024-02-05 08:24:22] [1] [INFO] RESULT #4: TEST [carina-demo - testDeletePosts] PASS [log=file://C:\Users\HP\IdeaProjects\carina-demo\.\reports\1707164653200/07589f6e-30cb-47ce-9be2-62649b14ba75/test.log]
+[2024-02-05 08:24:22] [1] [INFO] RESULT #5: TEST [carina-demo - testDeleteUsers] PASS [log=file://C:\Users\HP\IdeaProjects\carina-demo\.\reports\1707164653200/0876d76f-64fa-4ac2-8106-4920ff5ca72c/test.log]
+[2024-02-05 08:24:22] [1] [INFO] RESULT #6: TEST [carina-demo - testGetAllPosts] PASS [log=file://C:\Users\HP\IdeaProjects\carina-demo\.\reports\1707164653200/92daa853-0df1-4982-9edb-48a041306303/test.log]
+[2024-02-05 08:24:22] [1] [INFO] RESULT #7: TEST [carina-demo - testGetPost] PASS [log=file://C:\Users\HP\IdeaProjects\carina-demo\.\reports\1707164653200/627dc424-0020-4089-94d2-d4c0b8dc8a1b/test.log]
+[2024-02-05 08:24:22] [1] [INFO] RESULT #8: TEST [carina-demo - testGetUsers] PASS [log=file://C:\Users\HP\IdeaProjects\carina-demo\.\reports\1707164653200/e74a0c76-4b09-4001-8144-e8923aefd4b0/test.log]
+[2024-02-05 08:24:22] [1] [INFO] RESULT #9: TEST [carina-demo - testUpdatePost] PASS [log=file://C:\Users\HP\IdeaProjects\carina-demo\.\reports\1707164653200/54f79a8f-3c2a-4d3b-af27-8e83c3058d5b/test.log]
