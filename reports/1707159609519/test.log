@@ -1,0 +1,26 @@
+[2024-02-05 07:00:09] [1] [INFO] 
+============= Basic configuration =============
+env=DEMO
+=========== Encryptor configuration ===========
+crypto_key_value=*****
+=========== WebDriver configuration ===========
+url=https://www.gsmarena.com
+auto_screenshot=true
+localization_encoding=UTF-8
+language=en_US
+-------------- Driver capabilities ------------
+===============================================
+
+[2024-02-05 07:00:09] [1] [WARN] Reporting disabled: using no op test run registrar
+[2024-02-05 07:00:13] [1] [INFO] [TestNG] Running:
+  C:\Users\HP\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
+
+[2024-02-05 07:00:13] [1] [INFO] Set thread-count=1
+[2024-02-05 07:00:13] [1] [INFO] Set data-provider-thread-count=1
+[2024-02-05 07:00:13] [1] [INFO] CARINA_CORE_VERSION: 1.1.3
+[2024-02-05 07:00:16] [1] [INFO] INFO: '**************** Test execution summary ****************'.
+[2024-02-05 07:00:16] [1] [INFO] RESULT #1: TEST [carina-demo - testCreatePost] PASS [log=file://C:\Users\HP\IdeaProjects\carina-demo\.\reports\1707159609519/df07aaab-8609-4307-802b-9d40956657ff/test.log]
+[2024-02-05 07:00:16] [1] [INFO] RESULT #2: TEST [carina-demo - testDeletePosts] PASS [log=file://C:\Users\HP\IdeaProjects\carina-demo\.\reports\1707159609519/8fd7fe30-88f7-4903-8959-7a3b449e8efe/test.log]
+[2024-02-05 07:00:16] [1] [INFO] RESULT #3: TEST [carina-demo - testGetAllPosts] PASS [log=file://C:\Users\HP\IdeaProjects\carina-demo\.\reports\1707159609519/d07e814a-a7a6-46a1-b9f1-596a47dec3cb/test.log]
+[2024-02-05 07:00:16] [1] [INFO] RESULT #4: TEST [carina-demo - testGetPosts] PASS [log=file://C:\Users\HP\IdeaProjects\carina-demo\.\reports\1707159609519/38f3ef1d-eb6e-4a72-a9f5-1ab8f5f02a50/test.log]
+[2024-02-05 07:00:16] [1] [INFO] RESULT #5: TEST [carina-demo - testUpdatePost] PASS [log=file://C:\Users\HP\IdeaProjects\carina-demo\.\reports\1707159609519/a492844d-a23f-4b8c-a215-d2b753526d11/test.log]

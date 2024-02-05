@@ -1,0 +1,9 @@
+{
+    "0": {
+    <#if userId??>"userId": "S{userId}",</#if>
+    <#if name??>"name": "${name}",</#if>
+    <#if email??>"email": "${email}",</#if>
+    <#if body??>"body": "${body}"</#if>
+    },
+    "id": "regex:[\\d]"
+}
