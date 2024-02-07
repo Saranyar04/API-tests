@@ -3,6 +3,7 @@ package com.solvd.carina.demo;
 import java.lang.invoke.MethodHandles;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import com.solvd.carina.demo.api.post.*;
 import com.solvd.carina.demo.api.user.DeleteUserMethod;
 import com.solvd.carina.demo.api.user.GetUserMethods;
 import com.solvd.carina.demo.api.user.PostUserMethod;
@@ -32,10 +33,7 @@ public class APISampleTest implements IAbstractTest {
         LOGGER.info("test");
         setCases("4555,54545");
         PostUserMethod postUserMethod = new PostUserMethod();
-        postUserMethod.setProperties("api/users/posts.properties");
-
-        AtomicInteger counter = new AtomicInteger(0);
-
+        postUserMethod.setProperties("api/users/user.properties");
         postUserMethod.callAPI();
         postUserMethod.validateResponse();
     }
@@ -44,7 +42,7 @@ public class APISampleTest implements IAbstractTest {
     @MethodOwner(owner = "qpsdemo")
     public void testCreateUserMissingSomeFields() throws Exception {
         PostUserMethod postUserMethod = new PostUserMethod();
-        postUserMethod.setProperties("api/users/posts.properties");
+        postUserMethod.setProperties("api/users/user.properties");
         postUserMethod.getProperties().remove("name");
         postUserMethod.getProperties().remove("username");
         postUserMethod.callAPIExpectSuccess();
@@ -65,10 +63,55 @@ public class APISampleTest implements IAbstractTest {
     @TestPriority(Priority.P1)
     public void testDeleteUsers() {
         DeleteUserMethod deleteUserMethod = new DeleteUserMethod(1);
-        deleteUserMethod.setProperties("api/users/posts.properties");
+        deleteUserMethod.setProperties("api/users/user.properties");
         deleteUserMethod.callAPIExpectSuccess();
-        deleteUserMethod.validateResponse();
     }
 
+    @Test()
+    @MethodOwner(owner = "qpsdemo")
+    @TestPriority(Priority.P1)
+    public void testGetPost() {
+        GetPostsMethod getPostsMethod = new GetPostsMethod(3);
+        getPostsMethod.setProperties("api/posts/posts.properties");
+        getPostsMethod.callAPI();
+        getPostsMethod.validateResponse();
+    }
+
+   @Test()
+    @MethodOwner(owner = "qpsdemo")
+   @TestPriority(Priority.P1)
+    public void testGetAllPosts() {
+        GetAllPostsMethod getAllPostsMethod = new GetAllPostsMethod();
+        getAllPostsMethod.callAPIExpectSuccess();
+        getAllPostsMethod.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
+    }
+
+    @Test()
+    @MethodOwner(owner = "qpsdemo")
+    @TestPriority(Priority.P1)
+    public void testDeletePosts() {
+        DeletePostMethod deletePostMethod = new DeletePostMethod(4);
+        deletePostMethod.callAPI();
+    }
+
+    @Test()
+    @MethodOwner(owner = "qpsdemo")
+    @TestPriority(Priority.P1)
+    public void testCreatePost() throws Exception {
+        PostPostMethod postPostMethod = new PostPostMethod();
+        postPostMethod.setProperties("api/posts/posts.properties");
+        postPostMethod.callAPI();
+        postPostMethod.validateResponse();
+    }
+
+    @Test()
+    @MethodOwner(owner = "qpsdemo")
+    @TestPriority(Priority.P1)
+    public void testUpdatePost() throws Exception {
+        PutPostMethod putPostMethod = new PutPostMethod(1);
+        putPostMethod.setProperties("api/posts/posts.properties");
+        putPostMethod.callAPI();
+        putPostMethod.validateResponse();
+    }
 
 }

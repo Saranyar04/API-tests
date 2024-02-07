@@ -1,4 +1,4 @@
-package com.solvd.carina.demo.api.user;
+package com.solvd.carina.demo.api.post;
 
 import com.zebrunner.carina.api.AbstractApiMethodV2;
 import com.zebrunner.carina.api.annotation.Endpoint;
@@ -10,12 +10,13 @@ import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.config.Configuration;
 
 @Endpoint(url = "${api_url}/users", methodType = HttpMethodType.POST)
-@RequestTemplatePath(path = "api/users/_post/rq.json")
-@ResponseTemplatePath(path = "api/users/_post/rs.json")
+@RequestTemplatePath(path = "api/posts/_post/rq.json")
+@ResponseTemplatePath(path = "api/posts/_post/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.CREATED_201)
-public class PostUserMethod extends AbstractApiMethodV2 {
 
-    public PostUserMethod() {
+public class PostPostMethod extends AbstractApiMethodV2 {
+
+    public PostPostMethod() {
         replaceUrlPlaceholder("api_url", Configuration.getRequired("api_url"));
     }
 }
