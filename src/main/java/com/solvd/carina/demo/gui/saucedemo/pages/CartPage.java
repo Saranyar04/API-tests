@@ -33,5 +33,6 @@ public class CartPage extends AbstractPage {
         checkoutButton.click();
         return new CheckoutInfoPage(getDriver());
     }
+
 }
 

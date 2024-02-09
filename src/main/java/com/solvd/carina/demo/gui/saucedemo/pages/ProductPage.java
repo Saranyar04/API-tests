@@ -42,4 +42,12 @@ public class ProductPage extends AbstractPage {
         return new ProductDetailsPage(getDriver());
     }
 
+    public void addProductToCart(String productName) {
+        for (InventoryItem inventoryItem : products) {
+            if(productName.equals(inventoryItem.getProductTitle())) {
+                inventoryItem.clickAddToCardButton();
+            }
+        }
+    }
+
 }

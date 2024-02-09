@@ -7,7 +7,24 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class CheckoutPage extends AbstractSauceDemoTest {
+public class CartTest extends AbstractSauceDemoTest {
+
+    @Test
+    public void addProductToCartTest() {
+        String firstProduct = "Sauce Labs Backpack";
+        String secondProduct = "Sauce Labs Bike Light";
+
+        LoginPage loginPage = new LoginPage(getDriver());
+        loginPage.open();
+        ProductPage productPage = authUtil.loginStandardUser();
+        Assert.assertTrue(productPage.isPageOpened(), "Product page is not opened after login");
+        productPage.addProductToCart(firstProduct);
+        productPage.addProductToCart(secondProduct);
+        CartPage cartPage = productPage.clickCartButton();
+        Assert.assertTrue(cartPage.isPageOpened(), "Cart Page is not opened");
+        Assert.assertTrue(cartPage.isProductPresent(firstProduct), "Product : " + firstProduct + "is not present in the cart");
+        Assert.assertTrue(cartPage.isProductPresent(secondProduct), "Product : " + secondProduct + "is not present in the cart");
+    }
 
     @Test
     public void checkCheckoutInfo() {
@@ -20,7 +37,7 @@ public class CheckoutPage extends AbstractSauceDemoTest {
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.open();
         ProductPage productPage = authUtil.loginStandardUser();
-        Assert.assertTrue(productPage.isPageOpened(),"Product page is not opened after login");
+        Assert.assertTrue(productPage.isPageOpened(), "Product page is not opened after login");
         List<InventoryItem> inventoryItemList = productPage.getProducts();
         for (InventoryItem inventoryItem : inventoryItemList) {
             if (firstProduct.equals(inventoryItem.getProductTitle()) || secondProduct.equals(inventoryItem.getProductTitle())) {
@@ -40,5 +57,6 @@ public class CheckoutPage extends AbstractSauceDemoTest {
         Assert.assertTrue(checkoutOverviewPage.isProductPresent(firstProduct), "Product : " + firstProduct + "is not present in the cart");
         Assert.assertTrue(checkoutOverviewPage.isProductPresent(secondProduct), "Product : " + secondProduct + "is not present in the cart");
     }
+
 
 }

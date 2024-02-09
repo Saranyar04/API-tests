@@ -23,4 +23,5 @@ public class CheckoutOverviewPage extends AbstractPage {
     public boolean isProductPresent(String productTitle) {
         return productTitleS.format(productTitle).isElementPresent();
     }
+
 }

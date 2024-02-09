@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 
-public class ProductDetails extends AbstractSauceDemoTest{
+public class ProductDetailsTest extends AbstractSauceDemoTest {
 
     @Test
     public void viewProductDetailsTest() {
@@ -20,7 +20,7 @@ public class ProductDetails extends AbstractSauceDemoTest{
         loginPage.open();
 
         ProductPage productPage = authUtil.loginStandardUser();
-        Assert.assertTrue(productPage.isPageOpened(),"Product page is not opened after login");
+        Assert.assertTrue(productPage.isPageOpened(), "Product page is not opened after login");
         List<InventoryItem> inventoryItemList = productPage.getProducts();
         for (InventoryItem inventoryItem : inventoryItemList) {
             if (productTitle.equals(inventoryItem.getProductTitle())) {
@@ -30,7 +30,9 @@ public class ProductDetails extends AbstractSauceDemoTest{
         }
         ProductDetailsPage productDetailsPage = productPage.clickProductName();
         Assert.assertTrue(productDetailsPage.isPageOpened(), "Product Details page is not opened");
-        Assert.assertTrue(productDetailsPage.isProductDetails(productTitle), "Product :" + productTitle + "is not present in cart");
+        Assert.assertTrue(productDetailsPage.isProductPresent(productTitle), "Product :" + productTitle + "is not present in cart");
+        Assert.assertTrue(productDetailsPage.isDescriptionPresent());
+        Assert.assertTrue(productDetailsPage.isPricePresent());
     }
 
 }
