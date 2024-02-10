@@ -31,10 +31,10 @@ public class ProductDetailsTest extends AbstractSauceDemoTest {
         ProductDetailsPage productDetailsPage = productPage.clickProductName();
         Assert.assertTrue(productDetailsPage.isPageOpened(), "Product Details page is not opened");
         Assert.assertTrue(productDetailsPage.isProductPresent(productTitle), "Product :" + productTitle + "is not present in cart");
-        Assert.assertTrue(productDetailsPage.isDescriptionPresent());
-        Assert.assertTrue(productDetailsPage.isPricePresent());
-        Assert.assertTrue(productDetailsPage.isAddToCartButtonPresent());
-        Assert.assertTrue(productDetailsPage.isInventoryImagePresent());
+        Assert.assertNotNull(productDetailsPage.getDescriptionText() , "Product description not present");
+        Assert.assertTrue(productDetailsPage.getPriceText().matches("^\\$(([1-9]\\d{0,2}(,\\d{3})*)|(([1-9]\\d*)?\\d))(\\.\\d\\d)?$"), "Product price not present");
+        Assert.assertTrue(productDetailsPage.isAddToCartButtonPresent(), "Add to Cart Button not present");
+        Assert.assertTrue(productDetailsPage.isInventoryImagePresent(), "Product Image is not present");
     }
 
 }

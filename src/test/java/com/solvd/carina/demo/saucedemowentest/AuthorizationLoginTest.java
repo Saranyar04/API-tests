@@ -5,7 +5,7 @@ import com.zebrunner.carina.core.IAbstractTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class InvalidUserLoginTest implements IAbstractTest {
+public class AuthorizationLoginTest implements IAbstractTest {
 
     @Test
     public void invalidUserTest() {

@@ -33,38 +33,23 @@ public class ProductDetailsPage extends AbstractPage {
     }
 
     public boolean isProductPresent(String productTitle) {
-        if (inventoryNameS.format(productTitle).isElementPresent())
-            return true;
-        else
-            return false;
+        return inventoryNameS.format(productTitle).isElementPresent();
     }
 
     public boolean isInventoryImagePresent() {
-        if (inventoryImage.isElementPresent())
-            return true;
-        else
-            return false;
+        return inventoryImage.isElementPresent();
     }
 
     public boolean isAddToCartButtonPresent() {
-        if (addToCartButton.isElementPresent())
-            return true;
-        else
-            return false;
+        return (addToCartButton.isElementPresent());
     }
 
-    public boolean isDescriptionPresent() {
-        if (inventoryDescription.isElementPresent() && inventoryDescription.getText() != null)
-            return true;
-        else
-            return false;
+    public String getDescriptionText() {
+        return inventoryDescription.getText();
     }
 
-    public boolean isPricePresent() {
-        if (inventoryPrice.isElementPresent() && inventoryPrice.getText().matches("^\\$(([1-9]\\d{0,2}(,\\d{3})*)|(([1-9]\\d*)?\\d))(\\.\\d\\d)?$")) {
-            return true;
-        } else
-            return false;
+    public String getPriceText() {
+        return inventoryPrice.getText();
     }
 
 }
