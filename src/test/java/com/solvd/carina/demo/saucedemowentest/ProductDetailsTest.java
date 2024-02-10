@@ -33,6 +33,8 @@ public class ProductDetailsTest extends AbstractSauceDemoTest {
         Assert.assertTrue(productDetailsPage.isProductPresent(productTitle), "Product :" + productTitle + "is not present in cart");
         Assert.assertTrue(productDetailsPage.isDescriptionPresent());
         Assert.assertTrue(productDetailsPage.isPricePresent());
+        Assert.assertTrue(productDetailsPage.isAddToCartButtonPresent());
+        Assert.assertTrue(productDetailsPage.isInventoryImagePresent());
     }
 
 }
