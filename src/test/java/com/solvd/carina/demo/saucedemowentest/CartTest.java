@@ -58,5 +58,4 @@ public class CartTest extends AbstractSauceDemoTest {
         Assert.assertTrue(checkoutOverviewPage.isProductPresent(secondProduct), "Product : " + secondProduct + "is not present in the cart");
     }
 
-
 }

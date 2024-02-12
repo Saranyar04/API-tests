@@ -35,4 +35,3 @@ public class CartPage extends AbstractPage {
     }
 
 }
-
