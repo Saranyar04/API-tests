@@ -27,7 +27,7 @@ public class CartTest extends AbstractSauceDemoTest {
     }
 
     @Test
-    public void checkCheckoutInfo() {
+    public void checkoutScreenTest() {
         String firstProduct = "Sauce Labs Backpack";
         String secondProduct = "Sauce Labs Bike Light";
         String firstName = "Sam";
