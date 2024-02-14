@@ -1,5 +1,6 @@
 package com.solvd.carina.demo.saucedemowentest;
 
+import com.solvd.carina.demo.gui.saucedemo.web.components.InventoryItem;
 import com.solvd.carina.demo.gui.saucedemo.web.CartPage;
 import com.solvd.carina.demo.gui.saucedemo.web.LoginPage;
 import com.solvd.carina.demo.gui.saucedemo.web.ProductsPage;
