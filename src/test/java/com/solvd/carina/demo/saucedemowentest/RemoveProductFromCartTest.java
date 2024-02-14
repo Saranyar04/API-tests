@@ -1,13 +1,10 @@
 package com.solvd.carina.demo.saucedemowentest;
 
-import com.solvd.carina.demo.gui.saucedemo.components.InventoryItem;
-import com.solvd.carina.demo.gui.saucedemo.pages.CartPage;
-import com.solvd.carina.demo.gui.saucedemo.pages.LoginPage;
-import com.solvd.carina.demo.gui.saucedemo.pages.ProductPage;
+import com.solvd.carina.demo.gui.saucedemo.web.CartPage;
+import com.solvd.carina.demo.gui.saucedemo.web.LoginPage;
+import com.solvd.carina.demo.gui.saucedemo.web.ProductsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 public class RemoveProductFromCartTest extends AbstractSauceDemoTest {
 
@@ -18,20 +15,12 @@ public class RemoveProductFromCartTest extends AbstractSauceDemoTest {
 
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.open();
-        ProductPage productPage = authUtil.loginStandardUser();
-        Assert.assertTrue(productPage.isPageOpened(), "Product page is not opened after login");
-        List<InventoryItem> inventoryItemList = productPage.getProducts();
-        for (InventoryItem inventoryItem : inventoryItemList) {
-            if (firstProduct.equals(inventoryItem.getProductTitle()) || secondProduct.equals(inventoryItem.getProductTitle( ))) {
-                inventoryItem.clickAddToCardButton();
-            }
-        }
-        for (InventoryItem inventoryItem : inventoryItemList) {
-            if (firstProduct.equals(inventoryItem.getProductTitle())) {
-                inventoryItem.clickRemoveButton();
-            }
-        }
-        CartPage cartPage = productPage.clickCartButton();
+        ProductsPage productsPage = authUtil.loginStandardUser();
+        Assert.assertTrue(productsPage.isPageOpened(), "Product page is not opened after login");
+        productsPage.addProductToCart(firstProduct);
+        productsPage.addProductToCart(secondProduct);
+        productsPage.removeProductFromCart(firstProduct);
+        CartPage cartPage = productsPage.clickCartButton();
         Assert.assertTrue(cartPage.isPageOpened(), "Cart Page is not opened");
         Assert.assertFalse(cartPage.isProductPresent(firstProduct), "Product : " + firstProduct + "is present in the cart");
         Assert.assertTrue(cartPage.isProductPresent(secondProduct), "Product : " + secondProduct + "is not present in the cart");

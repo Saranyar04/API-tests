@@ -1,6 +1,6 @@
 package com.solvd.carina.demo.saucedemowentest;
 
-import com.solvd.carina.demo.gui.saucedemo.pages.LoginPage;
+import com.solvd.carina.demo.gui.saucedemo.web.LoginPage;
 import com.zebrunner.carina.core.IAbstractTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;

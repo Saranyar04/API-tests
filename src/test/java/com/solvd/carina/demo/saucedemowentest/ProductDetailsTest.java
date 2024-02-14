@@ -1,13 +1,10 @@
 package com.solvd.carina.demo.saucedemowentest;
 
-import com.solvd.carina.demo.gui.saucedemo.components.InventoryItem;
-import com.solvd.carina.demo.gui.saucedemo.pages.LoginPage;
-import com.solvd.carina.demo.gui.saucedemo.pages.ProductDetailsPage;
-import com.solvd.carina.demo.gui.saucedemo.pages.ProductPage;
+import com.solvd.carina.demo.gui.saucedemo.web.LoginPage;
+import com.solvd.carina.demo.gui.saucedemo.web.ProductDetailsPage;
+import com.solvd.carina.demo.gui.saucedemo.web.ProductsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 
 public class ProductDetailsTest extends AbstractSauceDemoTest {
@@ -19,16 +16,9 @@ public class ProductDetailsTest extends AbstractSauceDemoTest {
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.open();
 
-        ProductPage productPage = authUtil.loginStandardUser();
-        Assert.assertTrue(productPage.isPageOpened(), "Product page is not opened after login");
-        List<InventoryItem> inventoryItemList = productPage.getProducts();
-        for (InventoryItem inventoryItem : inventoryItemList) {
-            if (productTitle.equals(inventoryItem.getProductTitle())) {
-                inventoryItem.clickProductName();
-                break;
-            }
-        }
-        ProductDetailsPage productDetailsPage = productPage.clickProductName();
+        ProductsPage productsPage = authUtil.loginStandardUser();
+        Assert.assertTrue(productsPage.isPageOpened(), "Product page is not opened after login");
+        ProductDetailsPage productDetailsPage =  productsPage.clickProductName(productTitle);
         Assert.assertTrue(productDetailsPage.isPageOpened(), "Product Details page is not opened");
         Assert.assertTrue(productDetailsPage.isProductPresent(productTitle), "Product :" + productTitle + "is not present in cart");
         Assert.assertNotNull(productDetailsPage.getDescriptionText() , "Product description not present");
