@@ -1,13 +1,11 @@
 package com.solvd.carina.demo.gui.saucedemo.mobile.common;
 
 import com.zebrunner.carina.utils.exception.NotSupportedOperationException;
-import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.FindBy;
 
-public class FilterPopUpScreenBase extends SauceDemoAbstractScreenBase{
+public class FilterPopUpBase extends SauceDemoAbstractScreenBase{
 
-    protected FilterPopUpScreenBase(WebDriver driver) {
+    protected FilterPopUpBase(WebDriver driver) {
         super(driver);
     }
 

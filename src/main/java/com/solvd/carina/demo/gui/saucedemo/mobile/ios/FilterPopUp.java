@@ -1,12 +1,12 @@
 package com.solvd.carina.demo.gui.saucedemo.mobile.ios;
 
-import com.solvd.carina.demo.gui.saucedemo.mobile.common.FilterPopUpScreenBase;
+import com.solvd.carina.demo.gui.saucedemo.mobile.common.FilterPopUpBase;
 import com.zebrunner.carina.utils.exception.NotSupportedOperationException;
 import org.openqa.selenium.WebDriver;
 
-public class FilterPopUpScreen extends FilterPopUpScreenBase {
+public class FilterPopUp extends FilterPopUpBase {
 
-    protected FilterPopUpScreen(WebDriver driver) {
+    public FilterPopUp(WebDriver driver) {
         super(driver);
     }
 

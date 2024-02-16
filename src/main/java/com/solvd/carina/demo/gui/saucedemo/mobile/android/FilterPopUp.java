@@ -1,11 +1,13 @@
 package com.solvd.carina.demo.gui.saucedemo.mobile.android;
 
-import com.solvd.carina.demo.gui.saucedemo.mobile.common.FilterPopUpScreenBase;
+import com.solvd.carina.demo.gui.saucedemo.mobile.common.FilterPopUpBase;
+import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class FilterPopUpScreen extends FilterPopUpScreenBase {
+@DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = FilterPopUpBase.class)
+public class FilterPopUp extends FilterPopUpBase {
 
     @FindBy(xpath="//android.widget.TextView[@text='Sort items by...']")
     private ExtendedWebElement screenTitle;
@@ -20,18 +22,23 @@ public class FilterPopUpScreen extends FilterPopUpScreenBase {
     private ExtendedWebElement lowToHighFilter;
 
     @FindBy(xpath = "//android.widget.TextView[@text='Price (high to low)']")
-    private ExtendedWebElement HighToLowFilter;
+    private ExtendedWebElement highToLowFilter;
 
     @FindBy(xpath = "//android.widget.TextView[@text='Cancel']")
     private ExtendedWebElement cancelButton;
 
-    protected FilterPopUpScreen(WebDriver driver) {
+    protected FilterPopUp(WebDriver driver) {
         super(driver);
     }
 
     @Override
     public boolean isOpened() {
-        return screenTitle.isElementPresent();
+        return isOpened(IS_ELEMENT_PRESENT_TIMEOUT);
+    }
+
+    @Override
+    public boolean isOpened(int timeout) {
+        return screenTitle.isElementPresent(timeout);
     }
 
     @Override
@@ -51,7 +58,7 @@ public class FilterPopUpScreen extends FilterPopUpScreenBase {
 
     @Override
     public boolean isHighToLowFilterPresent() {
-        return HighToLowFilter.isElementPresent();
+        return highToLowFilter.isElementPresent();
     }
 
     @Override

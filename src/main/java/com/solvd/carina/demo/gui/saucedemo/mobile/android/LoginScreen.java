@@ -1,7 +1,7 @@
 package com.solvd.carina.demo.gui.saucedemo.mobile.android;
 
 import com.solvd.carina.demo.gui.saucedemo.mobile.common.LoginScreenBase;
-import com.solvd.carina.demo.gui.saucedemo.mobile.common.ProductScreenBase;
+import com.solvd.carina.demo.gui.saucedemo.mobile.common.ProductsScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
@@ -45,8 +45,8 @@ public class LoginScreen extends LoginScreenBase {
     }
 
     @Override
-    public ProductScreenBase clickLoginButton() {
+    public ProductsScreenBase clickLoginButton() {
         loginButton.click();
-        return initPage(ProductScreenBase.class);
+        return initPage(ProductsScreenBase.class);
     }
 }

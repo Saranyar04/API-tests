@@ -1,14 +1,14 @@
 package com.solvd.carina.demo.gui.saucedemo.mobile.android;
 
 import com.solvd.carina.demo.gui.saucedemo.mobile.common.CartScreenBase;
-import com.solvd.carina.demo.gui.saucedemo.mobile.common.ProductScreenBase;
+import com.solvd.carina.demo.gui.saucedemo.mobile.common.ProductsScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = CartScreenBase.class)
-public class CartScreen extends CartScreenBase{
+public class CartScreen extends CartScreenBase {
 
     @FindBy(xpath="//android.widget.TextView[@text='YOUR CART']")
     private ExtendedWebElement screenTitle;
@@ -25,13 +25,18 @@ public class CartScreen extends CartScreenBase{
 
     @Override
     public boolean isOpened() {
-        return screenTitle.isElementPresent();
+        return isOpened(IS_ELEMENT_PRESENT_TIMEOUT);
     }
 
     @Override
-    public ProductScreenBase continueShoppingButtonClick() {
+    public boolean isOpened(int timeout) {
+        return screenTitle.isElementPresent(timeout);
+    }
+
+    @Override
+    public ProductsScreenBase clickContinueShoppingButton() {
         continueShoppingButton.click();
-        return initPage(ProductScreenBase.class);
+        return initPage(ProductsScreenBase.class);
     }
 
     @Override

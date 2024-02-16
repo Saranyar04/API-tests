@@ -12,5 +12,5 @@ public abstract class LoginScreenBase extends SauceDemoAbstractScreenBase {
 
     public abstract void typePassword(String password);
 
-    public abstract ProductScreenBase clickLoginButton();
+    public abstract ProductsScreenBase clickLoginButton();
 }

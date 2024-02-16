@@ -1,7 +1,7 @@
 package com.solvd.carina.demo.gui.saucedemo.mobile.ios;
 
 import com.solvd.carina.demo.gui.saucedemo.mobile.common.CartScreenBase;
-import com.solvd.carina.demo.gui.saucedemo.mobile.common.ProductScreenBase;
+import com.solvd.carina.demo.gui.saucedemo.mobile.common.ProductsScreenBase;
 import com.zebrunner.carina.utils.exception.NotSupportedOperationException;
 import org.openqa.selenium.WebDriver;
 
@@ -12,7 +12,7 @@ public class CartScreen extends CartScreenBase {
     }
 
     @Override
-    public ProductScreenBase continueShoppingButtonClick() {
+    public ProductsScreenBase clickContinueShoppingButton() {
         throw new NotSupportedOperationException(NOT_IMPLEMENTED_FOR_IOS);
     }
 
