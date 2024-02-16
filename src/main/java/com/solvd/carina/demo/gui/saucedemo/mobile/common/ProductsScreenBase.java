@@ -6,17 +6,14 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.List;
 
-public class ProductsScreenBase extends SauceDemoAbstractScreenBase {
+public abstract class ProductsScreenBase extends SauceDemoAbstractScreenBase {
 
-    protected ProductsScreenBase(WebDriver driver) {
+    public ProductsScreenBase(WebDriver driver) {
         super(driver);
     }
 
-    public void addProductToCart(String productName){
-    }
+    public abstract void addProductToCart(String productName);
 
-    public FilterPopUpBase clickFilterButton() {
-        throw new NotSupportedOperationException("clickFilterButton is not implemented for this page");
-    }
+    public abstract FilterPopUpBase clickFilterButton();
 
 }

@@ -5,7 +5,7 @@ import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 
-public class SauceDemoAbstractScreenBase extends AbstractPage implements IMobileUtils {
+public class gitSauceDemoAbstractScreenBase extends AbstractPage implements IMobileUtils {
 
     protected final int IS_ELEMENT_PRESENT_TIMEOUT = 15;
     protected final String NOT_IMPLEMENTED_FOR_IOS = "Not implemented for Android";
