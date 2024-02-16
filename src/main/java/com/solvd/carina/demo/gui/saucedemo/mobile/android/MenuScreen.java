@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = MenuScreenBase.class)
-public class MenuScreen extends MenuScreenBase{
+public class MenuScreen extends MenuScreenBase {
 
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc='test-ALL ITEMS']")
     private ExtendedWebElement screenTitle;

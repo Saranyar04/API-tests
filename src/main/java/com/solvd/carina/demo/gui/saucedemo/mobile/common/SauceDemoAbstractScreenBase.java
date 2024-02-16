@@ -10,7 +10,7 @@ public class SauceDemoAbstractScreenBase extends AbstractPage implements IMobile
     protected final int IS_ELEMENT_PRESENT_TIMEOUT = 15;
     protected final String NOT_IMPLEMENTED_FOR_IOS = "Not implemented for Android";
 
-    protected SauceDemoAbstractScreenBase(WebDriver driver) {
+    public SauceDemoAbstractScreenBase(WebDriver driver) {
         super(driver);
     }
 
