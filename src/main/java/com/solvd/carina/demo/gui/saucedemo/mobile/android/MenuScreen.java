@@ -31,7 +31,7 @@ public class MenuScreen extends MenuScreenBase {
     }
 
     @Override
-    public LoginScreenBase logoutMenuItemClick() {
+    public LoginScreenBase clickLogoutButton() {
         logoutMenuItem.click();
         return initPage(LoginScreenBase.class);
     }

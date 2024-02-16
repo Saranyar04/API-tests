@@ -23,7 +23,7 @@ public class LogoutTest extends AbstractTest{
         HeaderBase header = new Header(getDriver());
         MenuScreenBase menuScreen = header.clickBurgerButton();
         Assert.assertTrue(menuScreen.isOpened(), "Menu screen is not opened");
-        loginScreen = menuScreen.logoutMenuItemClick();
+        loginScreen = menuScreen.clickLogoutButton();
         Assert.assertTrue(loginScreen.isOpened(), "Login screen is not opened");
     }
 }

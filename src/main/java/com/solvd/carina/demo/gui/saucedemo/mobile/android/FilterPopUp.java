@@ -1,6 +1,8 @@
 package com.solvd.carina.demo.gui.saucedemo.mobile.android;
 
 import com.solvd.carina.demo.gui.saucedemo.mobile.common.FilterPopUpBase;
+import com.solvd.carina.demo.gui.saucedemo.mobile.enums.SortOption;
+import com.zebrunner.carina.utils.exception.NotSupportedOperationException;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
@@ -42,27 +44,21 @@ public class FilterPopUp extends FilterPopUpBase {
     }
 
     @Override
-    public boolean isAtoZFilterPresent() {
-        return atoZFilter.isElementPresent();
+    public boolean isSortOptionPresent(SortOption sortOption) {
+        switch (sortOption) {
+            case A_TO_Z_FILTER:
+                return atoZFilter.isElementPresent();
+            case Z_TO_A_FILTER:
+                return ztoAFilter.isElementPresent();
+            case HIGH_TO_LOW_FILTER:
+                return highToLowFilter.isElementPresent();
+            case LOW_TO_HIGH_FILTER:
+                return lowToHighFilter.isElementPresent();
+            case CANCEL_BUTTON:
+                return cancelButton.isElementPresent();
+            default:
+                throw new NotSupportedOperationException(sortOption + "is not implemented for this page");
+        }
     }
 
-    @Override
-    public boolean isZtoAFilterPresent() {
-        return ztoAFilter.isElementPresent();
-    }
-
-    @Override
-    public boolean isLowToHighFilterPresent() {
-        return lowToHighFilter.isElementPresent();
-    }
-
-    @Override
-    public boolean isHighToLowFilterPresent() {
-        return highToLowFilter.isElementPresent();
-    }
-
-    @Override
-    public boolean isCancelButtonPresent() {
-        return cancelButton.isElementPresent();
-    }
 }

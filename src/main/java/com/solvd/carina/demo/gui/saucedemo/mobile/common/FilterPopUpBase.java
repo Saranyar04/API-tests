@@ -1,5 +1,6 @@
 package com.solvd.carina.demo.gui.saucedemo.mobile.common;
 
+import com.solvd.carina.demo.gui.saucedemo.mobile.enums.SortOption;
 import com.zebrunner.carina.utils.exception.NotSupportedOperationException;
 import org.openqa.selenium.WebDriver;
 
@@ -9,13 +10,7 @@ public abstract class FilterPopUpBase extends SauceDemoAbstractScreenBase{
         super(driver);
     }
 
-    public abstract boolean isAtoZFilterPresent();
+    public abstract boolean isSortOptionPresent(SortOption sortOption);
 
-    public abstract boolean isZtoAFilterPresent();
 
-    public abstract boolean isLowToHighFilterPresent();
-
-    public abstract boolean isHighToLowFilterPresent();
-
-    public abstract boolean isCancelButtonPresent();
 }

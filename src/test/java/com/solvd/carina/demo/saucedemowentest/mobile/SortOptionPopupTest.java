@@ -3,12 +3,13 @@ package com.solvd.carina.demo.saucedemowentest.mobile;
 import com.solvd.carina.demo.gui.saucedemo.mobile.common.FilterPopUpBase;
 import com.solvd.carina.demo.gui.saucedemo.mobile.common.LoginScreenBase;
 import com.solvd.carina.demo.gui.saucedemo.mobile.common.ProductsScreenBase;
+import com.solvd.carina.demo.gui.saucedemo.mobile.enums.SortOption;
 import com.zebrunner.carina.core.AbstractTest;
 import com.zebrunner.carina.utils.R;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class FilterPopupTest extends AbstractTest {
+public class SortOptionPopupTest extends AbstractTest {
 
     @Test
     public void checkFilterPopupContentTest() {
@@ -19,10 +20,11 @@ public class FilterPopupTest extends AbstractTest {
         ProductsScreenBase productScreen = loginScreen.clickLoginButton();
         Assert.assertTrue(productScreen.isOpened(), "Products screen is not opened");
         FilterPopUpBase filterPopUpScreen = productScreen.clickFilterButton();
-        Assert.assertTrue(filterPopUpScreen.isAtoZFilterPresent(), "A to Z filter not present");
-        Assert.assertTrue(filterPopUpScreen.isZtoAFilterPresent(), "Z To A filter not present");
-        Assert.assertTrue(filterPopUpScreen.isLowToHighFilterPresent(), "Low to High filter not present");
-        Assert.assertTrue(filterPopUpScreen.isHighToLowFilterPresent(), "High to Low filter not present");
-        Assert.assertTrue(filterPopUpScreen.isCancelButtonPresent(), "Cancel button not present");
+        Assert.assertTrue(filterPopUpScreen.isSortOptionPresent(SortOption.A_TO_Z_FILTER));
+        Assert.assertTrue(filterPopUpScreen.isSortOptionPresent(SortOption.Z_TO_A_FILTER));
+        Assert.assertTrue(filterPopUpScreen.isSortOptionPresent(SortOption.LOW_TO_HIGH_FILTER));
+        Assert.assertTrue(filterPopUpScreen.isSortOptionPresent(SortOption.HIGH_TO_LOW_FILTER));
+        Assert.assertTrue(filterPopUpScreen.isSortOptionPresent(SortOption.CANCEL_BUTTON));
+        
     }
 }
