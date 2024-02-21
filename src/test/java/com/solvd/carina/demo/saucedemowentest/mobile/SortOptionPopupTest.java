@@ -9,9 +9,6 @@ import com.zebrunner.carina.utils.R;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static com.solvd.carina.demo.gui.saucedemo.mobile.enums.SortOption.A_TO_Z_FILTER;
-import static com.solvd.carina.demo.gui.saucedemo.mobile.enums.SortOption.valueOf;
-
 public class SortOptionPopupTest extends AbstractTest {
 
     @Test
