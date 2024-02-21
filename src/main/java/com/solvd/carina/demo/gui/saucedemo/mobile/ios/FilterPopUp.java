@@ -13,7 +13,7 @@ public class FilterPopUp extends FilterPopUpBase {
 
     @Override
     public boolean isSortOptionPresent(SortOption sortOption) {
-            throw new NotSupportedOperationException(NOT_IMPLEMENTED_FOR_IOS);
+        throw new NotSupportedOperationException(NOT_IMPLEMENTED_FOR_IOS);
     }
 
 }

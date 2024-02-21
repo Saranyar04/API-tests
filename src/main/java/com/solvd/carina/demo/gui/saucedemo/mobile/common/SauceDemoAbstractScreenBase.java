@@ -21,4 +21,5 @@ public abstract class SauceDemoAbstractScreenBase extends AbstractPage implement
     public boolean isOpened(int timeout) {
         throw new NotSupportedOperationException("isOpened is not implemented for this page");
     }
+
 }

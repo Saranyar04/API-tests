@@ -1,10 +1,7 @@
 package com.solvd.carina.demo.gui.saucedemo.mobile.ios;
 
-import com.solvd.carina.demo.gui.saucedemo.mobile.common.CartScreenBase;
 import com.solvd.carina.demo.gui.saucedemo.mobile.common.FilterPopUpBase;
-import com.solvd.carina.demo.gui.saucedemo.mobile.common.LoginScreenBase;
 import com.solvd.carina.demo.gui.saucedemo.mobile.common.ProductsScreenBase;
-import com.solvd.carina.demo.gui.saucedemo.mobile.components.Item;
 import com.zebrunner.carina.utils.exception.NotSupportedOperationException;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import org.openqa.selenium.WebDriver;

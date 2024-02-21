@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = CartScreenBase.class)
 public class CartScreen extends CartScreenBase {
 
-    @FindBy(xpath="//android.widget.TextView[@text='YOUR CART']")
+    @FindBy(xpath = "//android.widget.TextView[@text='YOUR CART']")
     private ExtendedWebElement screenTitle;
 
     @FindBy(xpath = ".//android.widget.TextView[@text='%s']")

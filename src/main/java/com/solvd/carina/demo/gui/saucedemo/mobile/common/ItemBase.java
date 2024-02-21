@@ -10,4 +10,5 @@ public abstract class ItemBase extends AbstractPage {
     }
 
     public abstract void clickAddToCartButton(String productName);
+
 }
